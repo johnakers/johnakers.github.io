@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>John Akers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <script>
+
+      const BODY = document.querySelector('body');
+
+      const ITEMS = [
+        { name: '01_BURSTS', url: './bursts.html' },
+        { name: '02_GITHUB', url: 'https://github.com/johnakers' },
+        { name: '03_TWITTER', url: 'https://twitter.com/_johnakers' },
+        { name: '04_LINKEDIN', url: 'https://linkedin.com/in/akersjohn' }
+      ];
+
+      function item(params) {
+        let anchor = document.createElement('a');
+        anchor.target = 'new';
+        anchor.href = params.url;
+
+        let item = document.createElement('div');
+        item.className = 'item';
+        item.appendChild(anchor)
+
+        BODY.appendChild(item);
+
+        text(anchor, params.name)
+      }
+
+      function text(node, string) {
+        let array = string.split('');
+        let index = 0;
+
+        var textInterval = setInterval(function() {
+          if (index < array.length) {
+            node.innerText += array[index];
+            index++
+          } else {
+            clearInterval(textInterval);
+          }
+        }, 100);
+      }
+
+      // render items
+      ITEMS.forEach((el) => { item(el) });
+
+    </script>
+  </body>
+</html>
