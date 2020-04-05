@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Introduction to Oceanography</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <h2>Introduction to Oceanography</h2>
+
+      <!-- Chapter 1 -->
+      <h3>Chapter 1</h3>
+      <h4>1.1 Overview of Oceans</h4>
+      <div>
+        <a href="https://rwu.pressbooks.pub/webboceanography/chapter/1-1-overview-of-the-oceans/">Reading</a>
+        <div class="questions">
+          <button>Questions</button>
+          <ol style="display: none;">
+            <li>What percent of the Earth is covered by oceans?</l1>
+            <li>What is the name of the, disputed, fifth ocean?</li>
+            <li>What percent of Earth's water is ground water?</li>
+            <li>What is the average depth of the ocean?</li>
+          </ol>
+        </div>
+      </div>
+
+      <h4>1.2 Continental Margins</h4>
+      <div>
+        <a href="">Reading</a>
+        <div class="questions">
+          <button>Questions</button>
+          <ol style="display: none;">
+            <li>What is an example of an "active" continental margin? What attributes do they have?</l1>
+            <li>What is an example of a "passive" continental margin? What attributes do they have?</l1>
+            <li>What is a "continental shelf"?</li>
+            <li>What is the "shelf break"?</li>
+            <li>What is the continental slope"?</li>
+            <li>What is a "turbidity current"?</li>
+            <li>What is the "continental rise"?</li>
+            <li>What is the abyssal plain?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      const buttons = document.querySelectorAll('.questions button');
+      for (let button of buttons) {
+        button.addEventListener('click', function(b) {
+          b.target.nextElementSibling.style.display = 'block';
+        })
+      }
+
+    </script>
+  </body>
+</html>
