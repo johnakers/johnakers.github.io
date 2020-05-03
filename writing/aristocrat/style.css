@@ -1,0 +1,115 @@
+@font-face {
+  font-family: 'Harriet-Bold-Italic';
+  src: url('./fonts/Harriet-Bold-Italic.otf');
+}
+
+@font-face {
+  font-family: 'Bookerly-Regular';
+  src: url('./fonts/Bookerly-Regular.ttf');
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container-80 {
+  margin: auto;
+  margin-bottom: 5rem;
+  padding: 20px 0px 20px 0px;
+  width: 80%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Harriet-Bold-Italic;
+}
+
+p {
+  font-family: Bookerly-Regular;
+  line-height: 27px;
+}
+
+a {
+  color: #3A539B;
+  font-family: Bookerly-Regular;
+  font-style: italic;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 2px solid #3A539B;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  font-family: Bookerly-Regular;
+  padding-bottom: 7px;
+}
+
+.no-bullets {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+}
+
+.entry {
+  display: none;
+}
+
+#footer {
+  background-color: #D2D7D3;
+  font-size: 1rem;
+  height: 4rem;
+  opacity: 0.8;
+  position: fixed;
+    bottom: 0;
+    left: 0;
+  width: 100%;
+}
+
+.left,
+.right {
+  background-color: #D2D7D3;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-style: italic;
+}
+
+.left:hover,
+.right:hover {
+  font-weight: 900;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+button {
+  background: #EEE;
+  border: 1px solid #000;
+  cursor: pointer;
+  font-family: Bookerly-Regular;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+button:hover {
+  background-color: black;
+  color: #EEE;
+}

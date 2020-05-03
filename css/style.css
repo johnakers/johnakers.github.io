@@ -5,6 +5,14 @@ body {
   padding: 0;
 }
 
+#app {
+  color: #FFF;
+  font-family: Helvetica, sans-serif;
+  height: calc(100vh - 20px);
+  margin: 10px auto 10px auto;
+  width: calc(100% - 20px);
+}
+
 .item {
   font-family: Helvetica, sans-serif;
   margin: 10px;
@@ -21,37 +29,5 @@ body {
 
 .item a:hover {
   background-color: #FFF;
-  color: #000;
-}
-
-#burst {
-  color: #FFF;
-  font-family: Helvetica, sans-serif;
-  font-size: 12px;
-  margin: 10px;
-  max-width: 800px;
-  width: 80%;
-}
-
-#burst h3 {
-  font-size: 24px;
-}
-
-#burst p,
-#burst i {
-  font-size: 14px;
-  line-height: 24px;
-}
-
-#burst a {
-  border-bottom: 1px solid #FFF;
-  color: #FFF;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-#burst a:hover {
-  background-color: #FFF;
-  border-bottom: 1px solid #000;
   color: #000;
 }

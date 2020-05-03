@@ -5,15 +5,18 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
+
+    <script src="./puzzles/js/puzzle.js"></script>
     <script>
 
       const BODY = document.querySelector('body');
 
       const ITEMS = [
-        { name: '01_BURSTS', url: './bursts.html' },
-        { name: '02_GITHUB', url: 'https://github.com/johnakers' },
-        { name: '03_TWITTER', url: 'https://twitter.com/_johnakers' },
-        { name: '04_LINKEDIN', url: 'https://linkedin.com/in/akersjohn' }
+        { name: 'GITHUB', url: 'https://github.com/johnakers' },
+        { name: 'TWITTER', url: 'https://twitter.com/_johnakers' },
+        { name: 'LINKEDIN', url: 'https://linkedin.com/in/akersjohn' },
+        { name: 'SCRIBA', url: 'https://github.com/johnakers/scriba' },
+        { name: 'ARISTOCRAT', url: './writing/aristocrat/index.html' },
       ];
 
       function item(params) {
@@ -41,12 +44,11 @@
           } else {
             clearInterval(textInterval);
           }
-        }, 100);
+        }, 50);
       }
 
       // render items
       ITEMS.forEach((el) => { item(el) });
-
     </script>
   </body>
 </html>
