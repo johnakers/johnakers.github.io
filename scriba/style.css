@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+html,
+body {
+  background-color: #222;
+}
+
+h1,
+h3 {
+  font-family: 'Libre Baskerville', serif;
+}
+
+button {
+  background-color: #00EEEE;
+  border: none;
+  outline: none;
+  font-family: 'Source Code Pro', monospace;
+}
+
+button:hover {
+  background-color: #222;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+}
+
+#preview {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #FFF;
+}
+
+#preview a {
+  color: #F92772;
+  text-decoration: underline;
+}
+
+#preview a:visited {
+  color: #F92772;
+  text-decoration: underline;
+}
+
+#editor textarea {
+  background-color: #222;
+  border: none;
+  color: #FFF;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
+  height: calc(100vh - 50px);
+  margin-top: 5px;
+  outline: none;
+  width: calc(100% - 10px);
+}
+/* F92772 */
+
+#stackbar {
+  background-color: #F92772;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 140px;
+}
+
+#stackbar button {
+  margin: 10px 0px 0px 10px;
+}
+
+#stackbar .container {
+  background-color: #F92772;
+  margin: auto;
+  margin-top: 5px;
+  height: 100%;
+  width: 120px;
+}
+
+#stackbar .container .stack-item {
+  background: #222;
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 5px;
+  padding: 5px 5px 3px 5px;
+
+  width: calc(100% - 10px);
+}
+
+#stackbar .container .stack-item:hover {
+  background-color: #222;
+  color: #FFF;
+  cursor: pointer;
+}
