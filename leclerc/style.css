@@ -1,0 +1,75 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.slider {
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+}
+
+.slider .slide {
+  height: 100vh;
+  position: fixed;
+    left: 0;
+    top: 0;
+  width: 100vw;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#footer {
+  /* background-color: #000; */
+  height: 20vh;
+  position: fixed;
+    left: 0;
+    bottom: 0;
+  width: 100vw;
+  z-index: 200;
+}
+
+#footer #logo {
+  background-image: url(images/logo.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 28px;
+  position: fixed;
+    bottom: 10;
+    left: 10;
+  width: 50px;
+}
+
+#footer #icons {
+  display: block;
+  float: right;
+  height: 28px;
+  position: fixed;
+    right: 10;
+    bottom: 10;
+  width: 180px;
+}
+
+#footer a {
+  background-color: #FFF;
+  border-radius: 50%;
+  color: #333;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  float: right;
+  height: 20px;
+  margin-right: 6px;
+  padding-top: 8px;
+  text-align: center;
+  width: 28px;
+}
+
+#footer a:hover {
+  color: #000;
+}
