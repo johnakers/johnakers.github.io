@@ -86,7 +86,7 @@ function slideIn() {
 
   let initialHeight = info.clientHeight;
   var slideTimer = setInterval(function () {
-    if (initialHeight >= 600) {
+    if (initialHeight >= window.innerHeight / 2) {
       clearInterval(slideTimer);
     }
 
