@@ -1,54 +1,17 @@
 <html>
   <head>
     <title>John Akers</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-
-    <script>
-
-      const BODY = document.querySelector('body');
-
-      const ITEMS = [
-        { name: 'GITHUB', url: 'https://github.com/johnakers' },
-        { name: 'TWITTER', url: 'https://twitter.com/_johnakers' },
-        { name: 'LINKEDIN', url: 'https://linkedin.com/in/akersjohn' },
-        { name: 'SCRIBA', url: './scriba/index.html' },
-        { name: 'ARISTOCRAT', url: './writing/aristocrat/index.html' },
-        { name: 'LECLERC', url: './leclerc/index.html' },
-      ];
-
-      function item(params) {
-        let anchor = document.createElement('a');
-        anchor.target = 'new';
-        anchor.href = params.url;
-
-        let item = document.createElement('div');
-        item.className = 'item';
-        item.appendChild(anchor)
-
-        BODY.appendChild(item);
-
-        text(anchor, params.name)
-      }
-
-      function text(node, string) {
-        let array = string.split('');
-        let index = 0;
-
-        var textInterval = setInterval(function() {
-          if (index < array.length) {
-            node.innerText += array[index];
-            index++
-          } else {
-            clearInterval(textInterval);
-          }
-        }, 50);
-      }
-
-      // render items
-      ITEMS.forEach((el) => { item(el) });
-    </script>
+    <div id="app">
+      <div class="container">
+        <div class="nav">
+          <div class="link"><a href="./code.html">code</a></div>
+          <div class="link"><a href="./scrawl.html">scrawl</a></div>
+          <div class="link"><a href="./about.html">about</a></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
