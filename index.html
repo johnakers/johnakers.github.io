@@ -1,0 +1,77 @@
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+  <style>
+    @font-face {
+      font-family: 'Epsilon';
+      src: url('Epsilon.ttf');
+    }
+
+    html,
+    body {
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    #content {
+      color: #666;
+      font-family: sans-serif;
+      position: fixed;
+        bottom: 10;
+        left: 10;
+      z-index: 100;
+    }
+
+    #name {
+      font-family: 'Epsilon', sans-serif;
+      font-size: 20px;
+    }
+  </style>
+  </head>
+  <body>
+    <!-- epsilon font via: adrian wrobel (https://www.adrianwrobel.com/store/p/epsilon-typeface) -->
+    <!-- background model via integra (https://surrealutopia.com/downloads/) -->
+
+    <div id="content">
+      <div id="name">johnakers</div>
+    </div>
+
+    <!-- background animation -->
+    <div id="p5"></div>
+
+    <script>
+      // background animation
+      let p5Canvas;
+      let inaura;
+
+      function preload() {
+        inaura = loadModel('Integra - INAURA.obj', true);
+      }
+
+      function setup() {
+        p5Canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
+        p5Canvas.parent('p5');
+      }
+
+      function draw() {
+        let rotationSpeed = frameCount * 0.001;
+
+        background(30);
+
+        translate(width / 4, 0)
+        noStroke()
+        ambientLight(30);
+        pointLight(0, 30, 160, mouseX - width / 2, mouseY - height / 2, 100)
+        scale(7);
+        rotateX(rotationSpeed);
+        rotateY(rotationSpeed);
+        rotateZ(rotationSpeed);
+        specularMaterial(250);
+        shininess(90);
+        model(inaura);
+      }
+    </script>
+  </body>
+</html>
