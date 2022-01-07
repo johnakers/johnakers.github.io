@@ -5,12 +5,13 @@
   <style>
     @font-face {
       font-family: 'Epsilon';
-      src: url('Epsilon.ttf');
+      src: url('fonts/Epsilon.ttf');
     }
 
     html,
     body {
-      font-family: Helvetica, sans-serif;
+      background-color: #FFF;
+      font-family: 'Courier New', Courier, monospace;
       margin: 0;
       padding: 0;
     }
@@ -18,6 +19,7 @@
     .header {
       font-family: 'Epsilon', sans-serif;
       font-size: 20px;
+      margin: 10px 0px 10px 0px;
     }
 
     .container {
@@ -25,22 +27,35 @@
       padding-top: 10px;
       width: calc(100vw - 20px);
     }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <!-- epsilon font via: adrian wrobel (https://www.adrianwrobel.com/store/p/epsilon-typeface) -->
   <div class="container">
+    <div class="header">info</div>
+    <p>john is a software engineer, located in the bay area of california. previously, he was a construction
+    manager. his experience is primarily in web development. when not working, john is interested in running,
+    soccer, formula 1, streaming video games, making video games, art, film... and may other things.</p>
+  </div>
+
+  <div class="container">
     <div class="header">links</div>
-    <ul>
-      <li><a href="https://github.com/johnakers">github</a></li>
-      <li><a href="https://linkedin.com/in/akersjohn">linkedin</a></li>
-      <li><a href="https://twitter.com/_johnakers">twitter</a></li>
-    </ul>
+    <a target="new" href="https://github.com/johnakers">github</a><br />
+    <a target="new" href="https://linkedin.com/in/akersjohn">linkedin</a><br />
+    <a target="new" href="https://twitter.com/_johnakers">twitter</a><br />
   </div>
 
   <div class="container">
     <div class="header">logs</div>
-    <p>coming soon...</p>
+    <a href="/logs/01_anthology">01_anthology</a>
   </div>
 </body>
 </html>

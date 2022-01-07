@@ -5,7 +5,8 @@
 
 html,
 body {
-  background-color: #000;
+  /* background-color: #000; */
+  cursor: none;
   margin: 0;
   padding: 0;
 }
