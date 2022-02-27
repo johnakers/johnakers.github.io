@@ -3,17 +3,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>John Akers | Allegory</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
-
       @font-face {
         font-family: 'Epsilon';
         src: url('../fonts/Epsilon.ttf');
       }
 
+      @font-face {
+        font-family: 'OCR A Extended';
+        src: url('../fonts/ocr-a-extended.ttf');
+      }
+
       html,
       body {
-        background-color: #FFF;
-        font-family: 'Source Sans Pro', sans-serif;
+        background-color: #111;
+        color: #FFF;
+        font-family: 'OCR A Extended', monospace;
         margin: 0;
         padding: 0;
       }
@@ -25,62 +29,45 @@
       }
 
       .container {
-        margin: auto;
+        margin-left: 10px;
         padding-top: 10px;
         width: calc(100vw - 20px);
         max-width: 800px;
       }
 
+      p {
+        line-height: 20px;
+      }
+
       a {
+        color: red;
         text-decoration: none;
       }
 
       a:hover {
-        text-decoration: underline;
-      }
-
-      .parallax {
-        background-image: url('../images/fft-main-menu.png');
-        min-height: 40vh;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-      .content {
-        min-height: 1000px;
+        border-bottom: 2px solid red;
       }
     </style>
   </head>
   <body>
-
-    <div class="parallax"></div>
-    <div class="content">
-
-      <div class="container">
-        <a href="../info.html">back</a>
-        <div class="header">Allegory</div>
-        <p>
-          Allegory is a game I've wanted to make for a little bit. Its an RPG, without the battles.
-          As this project is a work in progress, consider the below a README, and TODO list, for now.
-          For now, I'm building this in JavaScript, leveraging <a href="https://www.youtube.com/watch?v=fyi4vfbKEeo&ab_channel=DrewConley">Drew Conley's Tutorial</a>
-          as there are certain parts of <code>canvas</code>, that I don't quite know. Additionally,
-          the aim is to use game develop patterns, rather than more web development patterns, though
-          I know there will be some crossover, at times.
-        </p>
-        <p>
-          The game is inspired by JRPGs like Final Fantasy Tactics (my favorite), and the story is loosely
-          based on Vampire Hunter D Bloodlust. Rhyz, a great vampire, rules a region called Limberry.
-          You, the hero, and the party you assemble, are tasked with clearing the countryside of Rhyz's
-          minions, and defeating him.
-        </p>
-        <p>
-          More will be put on this page, as the game develops.
-        </p>
-      </div>
-
+    <div class="container">
+      <a href="../info.html">back</a>
+      <div class="header">Allegory</div>
+      <p>
+        Allegory is a game I've wanted to make for a little bit. Its an RPG, without the battles.
+        As this project is a work in progress, consider the below a README, and TODO list, for now.
+        I'm building this in JavaScript, leveraging <a href="https://www.youtube.com/watch?v=fyi4vfbKEeo&ab_channel=DrewConley">Drew Conley's Tutorial</a>
+        as there are certain parts of <code>canvas</code>, that I don't quite know. Additionally,
+        the aim is to use game development patterns, rather than more web development ones, though
+        I know there will be some crossover, at times.
+      </p>
+      <p>
+        The game is inspired by JRPGs like Final Fantasy Tactics (a favorite), and the story is loosely
+        based on Vampire Hunter D Bloodlust.
+      </p>
+      <p>
+        More will be put on this page, as the game develops.
+      </p>
     </div>
-
   </body>
 </html>

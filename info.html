@@ -8,10 +8,16 @@
       src: url('fonts/Epsilon.ttf');
     }
 
+    @font-face {
+      font-family: 'OCR A Extended';
+      src: url('../fonts/ocr-a-extended.ttf');
+    }
+
     html,
     body {
-      background-color: #FFF;
-      font-family: 'Courier New', Courier, monospace;
+      background-color: #111;
+      color: #EEE;
+      font-family: 'OCR A Extended', Courier, monospace;
       margin: 0;
       padding: 0;
     }
@@ -29,34 +35,47 @@
       max-width: 800px;
     }
 
+    p {
+      line-height: 20px;
+    }
+
     a {
+      color: red;
       text-decoration: none;
     }
 
     a:hover {
-      text-decoration: underline;
+      border-bottom: 2px solid red;
     }
   </style>
 </head>
 <body>
   <!-- epsilon font via: adrian wrobel (https://www.adrianwrobel.com/store/p/epsilon-typeface) -->
+  <!-- ocr a extended font via https://fontzone.net/download/ocr-a-extended -->
   <div class="container">
     <div class="header">info</div>
-    <p>john is a software engineer, located in the bay area of california. previously, he was a construction
-    manager. his experience is primarily in web development. when not working, john is interested in running,
-    soccer, formula 1, streaming video games, making video games, art, film... and many other things.</p>
+    <p>
+      I am a Software Engineer, located in the San Francisco Bay area. I primarily work
+      in Ruby, and JavaScript. I have done personal projects in various other languages and frameworks.
+      Before changing careers, I was a Construction Manager, for CH2M Hill. I am interested in video
+      games, running, soccer, Formula 1, science fiction, and a fair few other things.
+    </p>
   </div>
 
   <div class="container">
     <div class="header">links</div>
-    <a target="new" href="https://github.com/johnakers">github</a><br />
-    <a target="new" href="https://linkedin.com/in/akersjohn">linkedin</a><br />
-    <a target="new" href="https://twitter.com/_johnakers">twitter</a><br />
+    <p>
+      <a target="new" href="https://github.com/johnakers">github</a><br />
+      <a target="new" href="https://linkedin.com/in/akersjohn">linkedin</a><br />
+      <a target="new" href="https://twitter.com/_johnakers">twitter</a><br />
+    </p>
   </div>
 
   <div class="container">
     <div class="header">logs</div>
-    <a href="./logs/allegory.html">allegory</a>
+    <p>
+      <a href="./logs/allegory.html">allegory</a>
+    </p>
   </div>
 </body>
 </html>

@@ -35,7 +35,7 @@
         translate(width / 5, 0)
         noStroke()
         ambientLight(30)
-        pointLight(0, 30, 160, mouseX - width / 2, mouseY - height / 2, 100)
+        pointLight(50, 50, 50, mouseX - width / 2, mouseY - height / 2, 100)
         scale(4)
         rotateX(rotationSpeed)
         rotateY(rotationSpeed)
@@ -43,6 +43,10 @@
         specularMaterial(250)
         shininess(90)
         model(inaura)
+      }
+
+      function mouseClicked() {
+        window.location.href = './info.html'
       }
 
     </script>
