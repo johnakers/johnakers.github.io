@@ -6,10 +6,43 @@
   <title>John Akers</title>
   <style>
 
+    @font-face {
+      font-family: 'OCR-A Extended';
+      src: url(./fonts/ocr-a-extended.ttf);
+    }
+
     html,
     body {
+      background-color: #000;
+      cursor: crosshair;
       margin: 0;
       padding: 0;
+    }
+
+    #links {
+      position: fixed;
+      bottom: 10;
+      left: 10;
+    }
+
+    .link {
+      margin-top: 5px;
+      color: #FFF;
+    }
+
+    .link:hover {
+      background-color: #FFF;
+    }
+
+    a {
+      color: inherit;
+      cursor: crosshair;
+      font-family: 'OCR-A Extended';
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #000;
     }
 
   </style>
@@ -19,6 +52,12 @@
 
     <!-- background animation -->
     <div id="p5"></div>
+    <div id="links">
+      <div class="link"><a target="new" href="https://github.com/johnakers">GITHUB</a></div>
+      <div class="link"><a target="new" href="https://twitter.com/_johnakers">TWITTER</a></div>
+      <div class="link"><a target="new" href="https://linkedin.com/in/akersjohn">LINKEDIN</a></div>
+      <div class="link"><a target="new" href="https://johnakers.net/praxis">PRAXIS</a></div>
+    </div>
 
     <script>
 
@@ -35,7 +74,6 @@
       }
 
       function draw() {
-        // buttons
         let rotationSpeed = frameCount * 0.001
 
         background(30)
@@ -51,10 +89,6 @@
         specularMaterial(250)
         shininess(90)
         model(inaura)
-      }
-
-      function mouseClicked() {
-        window.location.href = './info.html'
       }
 
     </script>
