@@ -1,55 +1,61 @@
 <html>
   <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
-  <title>John Akers</title>
-  <style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <title>John Akers</title>
+    <style>
 
-    @font-face {
-      font-family: 'OCR-A Extended';
-      src: url(./fonts/ocr-a-extended.ttf);
-    }
+      :root {
+        --background: #1E1E1E;
+        --color: #FFFFFF;
+      }
 
-    html,
-    body {
-      background-color: #000;
-      cursor: crosshair;
-      margin: 0;
-      padding: 0;
-    }
+      @font-face {
+        font-family: 'OCR-A Extended';
+        src: url(./fonts/ocr-a-extended.ttf);
+      }
 
-    #links {
-      position: fixed;
-      bottom: 10;
-      left: 10;
-    }
+      html,
+      body {
+        background-color: var(--background);
+        margin: 0;
+        padding: 0;
+      }
 
-    .link {
-      margin-top: 5px;
-      color: #FFF;
-    }
+      #links {
+        position: fixed;
+        bottom: 10;
+        left: 10;
+      }
 
-    .link:hover {
-      background-color: #FFF;
-    }
+      .link {
+        color: var(--color);
+        margin-top: 5px;
+        transition: 2s;
+        width: 100px;
+      }
 
-    a {
-      color: inherit;
-      cursor: crosshair;
-      font-family: 'OCR-A Extended';
-      text-decoration: none;
-    }
+      .link:hover {
+        background-color: var(--color);
+        width: 200px;
+      }
 
-    a:hover {
-      color: #000;
-    }
+      a {
+        color: inherit;
+        cursor: default;
+        font-family: 'OCR-A Extended';
+        text-decoration: none;
+      }
 
-  </style>
+      a:hover {
+        color: var(--background);
+      }
+
+    </style>
   </head>
   <body>
-    <!-- background model via integra (https://surrealutopia.com/downloads/) -->
 
-    <!-- background animation -->
+    <!-- Otacon PS1 model via: https://www.models-resource.com/playstation/metalgearsolid/model/60197/ -->
     <div id="p5"></div>
     <div id="links">
       <div class="link"><a href="https://github.com/johnakers">GITHUB</a></div>
@@ -59,10 +65,11 @@
     <script>
 
       let p5Canvas
-      let inaura
+      let m
+      let z = 9.4
 
       function preload() {
-        inaura = loadModel('models/Integra - INAURA.obj', true)
+        m = loadModel('models/Otacon/Otacon.obj', true)
       }
 
       function setup() {
@@ -71,21 +78,20 @@
       }
 
       function draw() {
-        let rotationSpeed = frameCount * 0.001
+        let y = frameCount * 0.01
 
         background(30)
 
-        translate(width / 5, 0)
+        translate(width / 10, 200)
         noStroke()
         ambientLight(30)
-        pointLight(50, 50, 50, mouseX - width / 2, mouseY - height / 2, 100)
+        pointLight(50, 50, 100, mouseX - width / 2, mouseY - height / 2, 100)
         scale(4)
-        rotateX(rotationSpeed)
-        rotateY(rotationSpeed)
-        rotateZ(rotationSpeed)
+        rotateY(y)
+        rotateZ(z)
         specularMaterial(250)
         shininess(90)
-        model(inaura)
+        model(m)
       }
 
     </script>
