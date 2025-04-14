@@ -11,8 +11,9 @@
       }
 
       :root {
-        --background: #232634;
-        --link: #81c8be;
+        --background: #000;
+        --link: #ff0000;
+        --timer: #ffffff;
       }
 
       html,
@@ -48,8 +49,16 @@
         color: inherit;
         cursor: crosshair;
         font-family: 'OCR-A Extended';
-        font-size: 2rem;
+        font-size: 1rem;
         text-decoration: none;
+      }
+
+      #timer {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-family: 'OCR-A Extended';
+        color: var(--timer);
       }
 
       a:hover {
@@ -70,10 +79,42 @@
     </style>
   </head>
   <body>
+    <div id="timer">00:00:00:00:000</div>
     <div id="links">
       <a href="https://bsky.app/profile/johnakers.net"><div class="link">BLUESKY</div></a>
       <a href="https://github.com/johnakers"><div class="link">GITHUB</div></a>
       <a href="https://linkedin.com/in/akersjohn"><div class="link">LINKEDIN</div></a>
     </div>
   </body>
+
+  <script>
+
+  let date = Date.now();
+  setInterval(function() {
+    let difference = Date.now() - date;
+
+    let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    let miliseconds = Math.floor(difference % 1000);
+
+    document.getElementById("timer").innerHTML = `${leftPad(days, 4)}:${leftPad(hours, 2)}:${leftPad(minutes, 2)}:${leftPad(seconds, 2)}:${leftPad(miliseconds, 3)}`;
+  }.bind(this), 1);
+
+  function leftPad(n, l) {
+    let nToString = `${n}`;
+    if (nToString.length >= l) {
+      return n;
+    }
+
+    let zeros = '';
+    for (let i = 0; i < l - nToString.length; i++) {
+      zeros += '0';
+    }
+
+    return `${zeros}${nToString}`;
+  }
+
+  </script>
 </html>
