@@ -80,6 +80,7 @@
           border-radius: 5px;
           color: var(--offwhite);
           display: inline;
+          margin-right: 2px;
           padding: 1px 3px;
         }
       }
@@ -213,7 +214,7 @@
         <div class="tags">
           ${tags.map(tag => {
             return `<div class="tag">${tag}</div>`
-          })}
+          }).join(' ')}
         </div>
       </div>`;
     }
