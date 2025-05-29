@@ -5,116 +5,217 @@
     <title>John Akers</title>
     <style>
 
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
       @font-face {
         font-family: 'OCR-A Extended';
         src: url(./fonts/ocr-a-extended.ttf);
       }
 
       :root {
-        --background: #000;
-        --link: #ff0000;
-        --timer: #ffffff;
+        --background: #000000;
+        --offwhite: #dddddd;
       }
 
       html,
       body {
         background-color: var(--background);
         cursor: crosshair;
+        /* font-family: 'OCR-A Extended', monospace; */
         height: 100vh;
         margin: 0;
         padding: 0;
+        position: relative;
         width: 100vw;
       }
 
-      #links {
-        position: fixed;
-        bottom: 10px;
-        left: 10px;
-      }
-
-      .link {
-        background-color: var(--link);
-        color: var(--background);
-        margin-top: 5px;
-        transition: 1s;
-        width: 200px;
-      }
-
-      .link:hover {
-        background-color: var(--link);
-        width: 50vw;
-      }
-
-      a {
+      a:visited {
         color: inherit;
-        cursor: crosshair;
-        font-family: 'OCR-A Extended';
-        font-size: 1rem;
-        text-decoration: none;
       }
 
-      #timer {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        font-family: 'OCR-A Extended';
-        color: var(--timer);
+      #container {
+        margin: 10px 0px 0px 10px;
       }
 
-      a:hover {
-        color: var(--background);
+      #projects {
+        color: var(--offwhite);
+        padding-bottom: 10px;
+
+        .project {
+          padding-bottom: 10px;
+        }
+
+        .title {
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          font-style: normal;
+
+          a {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .description {
+          font-family: "Poppins", sans-serif;
+          font-weight: 300;
+          font-style: normal;
+          font-size: 12px;
+          padding-bottom: 5px;
+        }
+
+        .tags {
+          font-family: "Poppins", sans-serif;
+          font-weight: 300;
+          font-style: normal;
+          font-size: 10px;
+        }
+
+        .tag {
+          border: 1px solid var(--offwhite);
+          border-radius: 5px;
+          color: var(--offwhite);
+          display: inline;
+          padding: 1px 3px;
+        }
       }
 
-      @media only screen and (max-width: 320px) {
-        html,
-        body {
-          cursor: crosshair;
+      #links {
+        border-top: 1px solid var(--offwhite);
+        display: flex;
+        justify-content: space-between;
+        padding-top: 5px;
+        width: 50vw;
+
+        .link {
+          color: var(--offwhite);
+          font-size: 12px;
         }
 
         .link:hover {
-          width: calc(100vw - 20px);
+          animation: spin 0.75s infinite;
+        }
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg);
         }
       }
 
     </style>
+    <script src="https://kit.fontawesome.com/a80270826f.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div id="timer">00:00:00:00:000</div>
-    <div id="links">
-      <a href="https://bsky.app/profile/johnakers.net"><div class="link">BLUESKY</div></a>
-      <a href="https://github.com/johnakers"><div class="link">GITHUB</div></a>
-      <a href="https://linkedin.com/in/akersjohn"><div class="link">LINKEDIN</div></a>
-    </div>
-  </body>
 
+    <div id="container">
+      <div id="projects"></div>
+
+      <div id="links">
+        <div class="link">
+          <a href="https://bsky.app/profile/johnakers.net" target="_blank">
+            <i class="fa-brands fa-bluesky"></i>
+          </a>
+        </div>
+        <div class="link">
+          <a href="https:/github.com/johnakers" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <div class="link">
+          <a href="https://linkedin.com/in/akersjohn" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+        <div class="link">
+          <a href="https://ko-fi.com/john_akers" target="_blank">
+            <i class="fa-solid fa-mug-hot"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </body>
   <script>
 
-  let date = Date.now();
-  setInterval(function() {
-    let difference = Date.now() - date;
+    const PROJECTS_DIV = document.getElementById('projects');
 
-    let days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((difference % (1000 * 60)) / 1000);
-    let miliseconds = Math.floor(difference % 1000);
+    // // this is unused for now, but if i ever want to color tags, here we go
+    // const TAG_MAP = new Map([
+    //   ['haxe', 'orange'],
+    //   ['game', 'cyan'],
+    //   ['ruby', 'red'],
+    //   ['js', 'yellow']
+    // ]);
 
-    document.getElementById("timer").innerHTML = `${leftPad(days, 4)}:${leftPad(hours, 2)}:${leftPad(minutes, 2)}:${leftPad(seconds, 2)}:${leftPad(miliseconds, 3)}`;
-  }.bind(this), 1);
+    const PROJECT_DATA = [
+      {
+        name: 'majo',
+        url: 'https://giuthub.com/johnakers/majo',
+        description: 'Work-in-progress 2D game inspired by Zelda, Hyper Light Drifter and more',
+        tags: ['haxe', 'game']
+      },
+      {
+        name: 'pod',
+        url: 'https://johnakers.net/pod',
+        description: 'a p5js clone of CAPSULE ',
+        tags: ['js', 'game']
+      },
+      {
+        name: 'aetheryte',
+        url: 'https://johnakers.net/aetheryte',
+        description: 'RubyGem for parsing FFXIV Lodestone profiles',
+        tags: ['ruby', 'game']
+      },
+      {
+        name: 'gannet',
+        url: 'https://giuthub.com/johnakers/gannet',
+        description: 'RubyGem for AirNow',
+        tags: ['ruby']
+      },
+      {
+        name: 'petrel',
+        url: 'https://giuthub.com/johnakers/petrel',
+        description: 'RubyGem for OpenWeatherMap',
+        tags: ['ruby']
+      },
+      {
+        name: 'loqui',
+        url: 'https://giuthub.com/johnakers/loqui',
+        description: 'A little work-in-progress Twitch chat overlay for your stream',
+        tags: ['js']
+      },
+      {
+        name: 'vellicare',
+        url: 'https://giuthub.com/johnakers/vellicare',
+        description: 'A small TwitchAPI microservice',
+        tags: ['ruby']
+      }
+    ];
 
-  function leftPad(n, l) {
-    let nToString = `${n}`;
-    if (nToString.length >= l) {
-      return n;
+    function Project({ name, url, description, tags }) {
+      return `<div class="project">
+        <div class="title">
+          <a href="${url}" target="_blank">${name}</a>
+        </div>
+        <div class="description">${description}</div>
+        <div class="tags">
+          ${tags.map(tag => {
+            return `<div class="tag">${tag}</div>`
+          })}
+        </div>
+      </div>`;
     }
 
-    let zeros = '';
-    for (let i = 0; i < l - nToString.length; i++) {
-      zeros += '0';
-    }
-
-    return `${zeros}${nToString}`;
-  }
+    const projects = PROJECT_DATA.map(project => Project(project)).join(' ');
+    PROJECTS_DIV.innerHTML = projects;
 
   </script>
 </html>
