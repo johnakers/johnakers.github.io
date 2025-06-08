@@ -35,6 +35,12 @@
 
       #container {
         margin: 10px 0px 0px 10px;
+
+        p {
+          color: var(--offwhite);
+          font-family: "Poppins", sans-serif;
+          font-size: 12px;
+        }
       }
 
       #projects {
@@ -122,6 +128,11 @@
   <body>
 
     <div id="container">
+      <p>
+        i always have some personal projects going on. some never see the light of day, some are
+        more polished than others. below is a subset...
+      </p>
+
       <div id="projects"></div>
 
       <div id="links">
@@ -163,10 +174,10 @@
 
     const PROJECT_DATA = [
       {
-        name: 'majo',
-        url: 'https://giuthub.com/johnakers/majo',
-        description: 'Work-in-progress 2D game inspired by Zelda, Hyper Light Drifter and more',
-        tags: ['haxe', 'game']
+        name: 'majo [working title]',
+        url: "#",
+        description: 'a very work-in-progress Godot Zelda-roguelike',
+        tags: ['godot', 'gdscript']
       },
       {
         name: 'pod',
@@ -193,7 +204,7 @@
         tags: ['ruby']
       },
       {
-        name: 'loqui',
+        name: 'loqui [wip]',
         url: 'https://giuthub.com/johnakers/loqui',
         description: 'A little work-in-progress Twitch chat overlay for your stream',
         tags: ['js']
@@ -203,7 +214,13 @@
         url: 'https://giuthub.com/johnakers/vellicare',
         description: 'A small TwitchAPI microservice',
         tags: ['ruby']
-      }
+      },
+      {
+        name: 'haxestuff',
+        url: 'https://giuthub.com/johnakers/majo',
+        description: 'Tinkering in Haxe',
+        tags: ['haxe', 'game']
+      },
     ];
 
     function Project({ name, url, description, tags }) {
